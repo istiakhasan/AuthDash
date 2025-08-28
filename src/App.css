@@ -1,0 +1,133 @@
+.MuiBox-root.css-19kzrtu {
+  padding: 12px 0 !important;
+}
+
+/* custom table  */
+.table-responsive {
+  width: 100%;
+  margin: 0 auto;
+}
+.table-responsive table{
+  width: 100%;
+}
+
+.table-responsive table td {
+  font-size: 12px;
+  color: #5a5a55;
+  padding: 2px 4px !important;
+
+}
+.table-responsive table th {
+  font-size: 12px;
+   color: #5a5a55;
+   font-weight: bold;
+   padding: 0 4px ;
+
+}
+.table-responsive table tr{
+  border: .5px solid rgb(212, 206, 206) !important;
+}
+.table-responsive table tr:hover{
+  transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+
+/*global box shadow   */
+.global-wrappar-shadow {
+  padding: 15px;
+  background: #eaf6f6;
+  border-radius: 8px;
+
+  /* height: 100vh;
+  width: 100%; */
+  /* box-shadow: 42px 42px 81px #eaf6f6, -42px -42px 81px #eaf6f6; */
+}
+
+/* header  */
+.header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+
+
+
+/* common input field  */
+
+.js-input {
+  width: 100%;
+  border: 0.5px solid rgb(188, 185, 185);
+  padding: 10px 18px;
+  outline: none;
+  font-size: 12px;
+}
+.js-form-input {
+  width: 100%;
+  border: 0.5px solid rgb(188, 185, 185);
+  padding: 5px 18px;
+  outline: none;
+  border-radius: 4px;
+  font-size: 12px;
+  margin-bottom: 15px;
+}
+
+
+/* profile submenu  */
+
+.profile-submenu {
+  font-size: 12px;
+  margin-left: 8px;
+  margin-right: 8px;
+  font-weight: 500;
+  color: #000000;
+
+}
+
+.profile-submenu:hover {
+  /* color: rgb(60, 44, 165); */
+  /* background-color: #929288; */
+
+ color: #000000;
+
+
+}
+
+.submenu-wrapper {
+
+  border-radius: 2px;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 222;
+  padding:  8px;
+
+}
+.submenu-wrapper:hover{
+  background-color: #CCD0D5;
+}
+
+@media screen and (min-width: 480px) {
+#sidebar-wrapper{
+  position: relative !important;
+}
+}
+
+
+.is-table{
+  border-collapse: collapse;
+  /* border: .3px solid rgb(126, 104, 104); */
+  width: 100%;
+}
+.is-table th{
+  /* border: .3px solid rgb(135, 107, 107); */
+}
+.is-table input{
+  max-width: 80px;
+}
