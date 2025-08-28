@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ListGroup, Button } from "react-bootstrap";
+import { ListGroup, Button, Tabs, Tab } from "react-bootstrap";
 import JsButton from "../../common/JsButton";
 import { toast } from "react-toastify";
 
@@ -21,8 +21,9 @@ const Notifications = () => {
   };
 
   return (
-    <div className="mt-3">
-      <h5>Notifications</h5>
+     <Tabs className="mb-3" defaultActiveKey="po_approve">
+          <Tab title="Notifications" eventKey={"po_approve"}>
+    <div>
       <ListGroup>
         {notifications.map((n) => (
           <ListGroup.Item
@@ -43,6 +44,8 @@ const Notifications = () => {
         ))}
       </ListGroup>
     </div>
+    </Tab> 
+    </Tabs>
   );
 };
 
