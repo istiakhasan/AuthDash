@@ -6,12 +6,12 @@ It supports **Sign In & Sign Up** functionality, uses **Redux** for state manage
 ---
 
 ## 🌐 Live Demo
-🔗 [View on Vercel](https://your-vercel-deployment-url.vercel.app/)
+🔗 [View on Vercel](https://auth-dash-chi.vercel.app)
 
 ---
 
 ## 📦 GitHub Repository
-🔗 [GitHub Repo](https://github.com/your-username/your-repo-name)
+🔗 [GitHub Repo](https://github.com/istiakhasan/AuthDash)
 
 ---
 
@@ -20,7 +20,7 @@ It supports **Sign In & Sign Up** functionality, uses **Redux** for state manage
 - ✅ Sign Up & auto login after registration  
 - ✅ State management with **Redux**  
 - ✅ Form validation using **Formik + Yup**  
-- ✅ Responsive design (desktop & mobile friendly)  
+- ✅ Responsive design For Desktop
 - ✅ Clean modular codebase for scalability  
 
 ---
@@ -39,5 +39,5 @@ It supports **Sign In & Sign Up** functionality, uses **Redux** for state manage
 Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/istiakhasan/AuthDash
 cd your-repo-name
