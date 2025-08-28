@@ -6,6 +6,7 @@ import SidebarChildNode from "./SidebarChildNode";
 import MuiCommonIcon from "../MuiCommonIcon";
 import { logout } from "../../redux/authSlice";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 export const Sidebar = () => {
   const [click, setIsClick] = useState();
@@ -15,6 +16,7 @@ export const Sidebar = () => {
   const handleLogout = () => {
     dispatch(logout());
     navigate("/login/admin");
+    toast.success('Logout successfully')
   };
   return (
     <div

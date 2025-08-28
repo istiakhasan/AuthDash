@@ -37,18 +37,15 @@
   cursor: pointer;
 }
 
-/*global box shadow   */
+
 .global-wrappar-shadow {
   padding: 15px;
   background: #eaf6f6;
   border-radius: 8px;
 
-  /* height: 100vh;
-  width: 100%; */
-  /* box-shadow: 42px 42px 81px #eaf6f6, -42px -42px 81px #eaf6f6; */
 }
 
-/* header  */
+
 .header {
   position: absolute;
   top: 20px;
@@ -58,7 +55,7 @@
 
 
 
-/* common input field  */
+
 
 .js-input {
   width: 100%;

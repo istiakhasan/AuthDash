@@ -1,16 +1,12 @@
-import React from "react";
+
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-
 import { Link } from "react-router-dom";
 
 const SecondLayer = ({ child, index, secondClick, setSecondClick, data }) => {
-  // const [click, setClick] = useState("");
   const dispatch = useDispatch();
   useEffect(() => {
     const urlPath = window.location.pathname;
-    // const firstLayerTitle = urlPath.split("/")[1];
-
     const getSignleItem = data.find((dt) => dt.title.toLowerCase() === urlPath);
     if (getSignleItem) {
       setSecondClick(getSignleItem.id);

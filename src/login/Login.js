@@ -8,8 +8,8 @@ import Jsinput from "../common/Jsinput";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import { loginSuccess } from "../redux/authSlice";
+import { toast } from "react-toastify";
 
-// Validation Schemas
 const loginValidation = yup.object().shape({
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup.string().required("Password is required"),
@@ -25,7 +25,6 @@ const memberValidation = yup.object().shape({
   password: yup.string().required("Password is required"),
 });
 
-// Sign up validation (example)
 const signupValidation = yup.object().shape({
   email: yup.string().email("Invalid email").required("Email is required"),
   password: yup.string().required("Password is required"),
@@ -40,19 +39,17 @@ const signupValidation = yup.object().shape({
 const Login = ({ initialUserType = "Admin" }) => {
   const [smallSize, setSmallSize] = useState(false);
   const [userType, setUserType] = useState(initialUserType);
-  const [isSignUp, setIsSignUp] = useState(false); // Toggle between Sign In and Sign Up
+  const [isSignUp, setIsSignUp] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { isAuthenticated, role } = useSelector((state) => state.auth);
 
-  // Redirect if already logged in
   useEffect(() => {
     if (isAuthenticated) {
       navigate(`/dashboard/${role.toLowerCase()}`);
     }
   }, [isAuthenticated, role, navigate]);
 
-  // Handle responsive
   useEffect(() => {
     const handleResize = () => setSmallSize(window.innerWidth < 750);
     window.addEventListener("resize", handleResize);
@@ -60,7 +57,6 @@ const Login = ({ initialUserType = "Admin" }) => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Formik setup
   const { handleSubmit, handleChange, errors, touched, resetForm, values } =
     useFormik({
       initialValues: {
@@ -72,20 +68,18 @@ const Login = ({ initialUserType = "Admin" }) => {
       },
       validationSchema: isSignUp ? signupValidation : userType === "Admin" ? loginValidation : userType === "Merchant" ? merchantValidation : memberValidation,
       onSubmit: async (values) => {
-        // Fake SignUp / SignIn process
         if (isSignUp) {
-          // Here you can call API to register user
           console.log("Signing up", values);
         }
 
-        // Auto login after SignUp or normal SignIn
+ 
         const fakeToken = `${userType.toLowerCase()}-token-${Date.now()}`;
         dispatch(loginSuccess({ token: fakeToken, role: userType }));
+        toast.success('Authentication successful! Welcome back.')
       },
       enableReinitialize: true,
     });
 
-  // Reset form on type or mode change
   useEffect(() => resetForm(), [userType, isSignUp, resetForm]);
 
   return (

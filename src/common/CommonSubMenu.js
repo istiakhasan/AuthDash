@@ -4,6 +4,7 @@ import MuiCommonIcon from "./MuiCommonIcon";
 import { useNavigate } from "react-router-dom";
 import { logout } from "../redux/authSlice";
 import { useDispatch } from "react-redux";
+import { toast } from "react-toastify";
 export default function CommonSubMenu({ setAnchorEl, open, anchorEl }) {
   const dispatch = useDispatch();
   const handleClose = () => {
@@ -13,6 +14,7 @@ export default function CommonSubMenu({ setAnchorEl, open, anchorEl }) {
     const handleLogout = () => {
       dispatch(logout());
       navigate('/login/admin');
+      toast.success('Logout successfully')
     };
   
   return (
