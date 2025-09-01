@@ -65,4 +65,5 @@ export const getRoleWiseMenu = (role) => {
     if (role === 'Admin') return adminDashboardData;
     if (role === 'Merchant') return MerchantDashboardData;
     if (role === 'Member') return MemberDashboardData;
+    
 };

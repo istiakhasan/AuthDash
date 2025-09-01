@@ -50,12 +50,7 @@ const Login = ({ initialUserType = "Admin" }) => {
     }
   }, [isAuthenticated, role, navigate]);
 
-  useEffect(() => {
-    const handleResize = () => setSmallSize(window.innerWidth < 750);
-    window.addEventListener("resize", handleResize);
-    handleResize();
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+
 
   const { handleSubmit, handleChange, errors, touched, resetForm, values } =
     useFormik({
@@ -84,13 +79,13 @@ const Login = ({ initialUserType = "Admin" }) => {
 
   return (
     <div className="min-vh-100 login-wraper container-fluid p-0">
-      <div style={{ position: "relative" }} className="component-background-color p-0 m-0 vh-100 vw-100">
-        <div style={{ width: "50%" }} className={`vh-100 p-0 right-side-container ${!smallSize ? "left-side" : ""}`}>
+      <div  className="component-background-color p-0 m-0 vh-100 d-flex align-items-center">
+        <div  className={`vh-100 d-none d-lg-block p-0 right-side-container flex-grow-1`}>
           <img style={{ objectFit: "cover" }} className="img-fluid h-100 w-100" src={loginimg} alt="Login" />
         </div>
 
-        <div className={`vh-100 p-0 d-flex align-items-center justify-content-center ${smallSize ? "w-100" : "right-side-reverse w-50"}`}>
-          <div style={{ padding: "40px", minHeight: "400px", width: "488px", border: "3px solid #fcfefe" }} className="d-flex align-items-center">
+        <div className={`vh-100 p-0 d-flex align-items-center justify-content-center flex-grow-1 px-lg-5`}>
+          <div style={{ padding: "40px", minHeight: "400px", border: "3px solid #fcfefe" }} className="d-flex w-100 mx-lg-5  align-items-center">
             <form className="w-100" onSubmit={handleSubmit}>
               <div className="d-flex gap-3 mb-4">
                 {["Admin", "Merchant", "Member"].map((type) => (
